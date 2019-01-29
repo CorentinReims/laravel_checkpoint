@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Bienvenue<br />
+                    Vous êtes connecté
+                    <a href="{{ url('/add-movies') }}">Ajoute un film !</a>
                 </div>
             </div>
         </div>

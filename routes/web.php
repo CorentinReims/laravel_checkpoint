@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +17,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/add-movies', 'AddMoviesController@show') -> name('movieForm');
+Route::post('/add-movies', 'AddMoviesController@addmovie') -> name('addMovie');
+
+Route::get('movies-list', function(){
+    if (Auth::user()){
+    $userId = Auth::user() -> id;
+    
+    // $userMovies = DB::select(`SELECT * FROM movies WHERE user_id = {{$userId}}`, [1]);
+    $userMovies = App\Movies::where('user_id', $userId)->get();
+    // WHERE('user_id', $userId);
+    
+
+    return view ('moviesList', [
+        'movies' => $userMovies,
+        'userId' => $userId
+    ]);
+    }
+});
