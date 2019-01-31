@@ -42,3 +42,7 @@ Route::get('Policier', 'SearchController@showPolicier') -> name('policier');
 Route::get('ScienceF', 'SearchController@showScienceF') -> name('scienceF');
 
 Route::get('Thriller', 'SearchController@showThriller') -> name('thriller');
+
+Route::get('delete/{id}', 'MoviesListController@destroy');
+
+Route::get('update/{id}', 'MoviesListController@update');

@@ -25,13 +25,12 @@ class AddMoviesController extends Controller
         ]);
       
         $image = $request->file('poster');
-      
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-      
-        $image->move(public_path('images'), $new_name);
-
+        
         $userId = Auth::user() -> id;
-            
+      
+        $new_name = $userId . '_' . rand() . '.' . $image->getClientOriginalExtension();
+
+        $image->move(public_path('images'), $new_name);  
       
         $movie = new App\Movies;
         $movie -> user_id = $userId;

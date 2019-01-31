@@ -37,7 +37,7 @@
                     </button>
                 </a>
                 <a href="{{ url('ScienceF') }}">
-                    <button style="backgroundColor: rgba(210, 227, 17, 0.5);border:1px solid black">Sci-Fi
+                    <button style="backgroundColor: rgba(210, 227, 17, 0.5);border:1px solid black">Science-Fiction
                     </button>
                 </a>
                 <a href="{{ url('Thriller') }}">
@@ -67,18 +67,23 @@
                                 <p class="card-text">Resumé : {{$movie->synopsis}}</p>
                                 <p class="card-text">Catégorie : {{$movie->category}}</p>
                                 <p class="card-text">Date de sortie : {{$movie->release_date}}</p>
+                                <a href='delete/{{ $movie->id }}'>
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
                             </div>
                     </div>
             @endforeach
         @else
             <div>
                 @if(strpos(Request::url(), 'movies-list') == true)
-                    <p>Tu n as aucuns films dans ta liste !
+                    <p>Tu n'as aucuns films dans ta liste !
                         <a href="{{ url('/add-movies') }}">Ajoutes-en !</a>
                     </p>
-                    <p>{{Request::url()}}</p>
                 @else
-                    <p>Tu n as ajouté aucuns films dans cette catégorie !
+                    <p>Tu n'as ajouté aucuns films dans cette catégorie !
                         <a href="{{ url('/add-movies') }}">Ajoutes-en !</a>
                     </p>
                 @endif
