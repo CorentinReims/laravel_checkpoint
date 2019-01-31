@@ -37,6 +37,7 @@ class AddMoviesController extends Controller
         $movie -> user_id = $userId;
         $movie -> title = request('title');
         $movie -> poster = $new_name;
+        $movie -> category = request('category');
         $movie -> synopsis = request('synopsis');
         $movie -> release_date = request('release_date');
         $movie -> save();

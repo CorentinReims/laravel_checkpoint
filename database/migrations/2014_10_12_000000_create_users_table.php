@@ -24,6 +24,17 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // DB::table('users')->insert(
+        //     array(
+        //         'firstname' => 'Corentin',
+        //         'lastname' => 'DE SOTO COBET',
+        //         'firstname' => 'Corentin',
+        //         'lastname' => 'DE SOTO COBET',
+        //         'firstname' => 'Corentin',
+        //         'lastname' => 'DE SOTO COBET',
+        //     )
+        // );
     }
 
     /**

@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="backgroundColor: rgba(210, 227, 17, 0.5);border:1px solid black">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'CineWild') }}
@@ -75,7 +75,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="backgroundColor: rgba(150, 150, 150, 0.3);minHeight:100vh;">
             @yield('content')
         </main>
     </div>

@@ -21,18 +21,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add-movies', 'AddMoviesController@show') -> name('movieForm');
 Route::post('/add-movies', 'AddMoviesController@addmovie') -> name('addMovie');
 
-Route::get('movies-list', function(){
-    if (Auth::user()){
-    $userId = Auth::user() -> id;
-    
-    // $userMovies = DB::select(`SELECT * FROM movies WHERE user_id = {{$userId}}`, [1]);
-    $userMovies = App\Movies::where('user_id', $userId)->get();
-    // WHERE('user_id', $userId);
-    
+Route::get('movies-list', 'MoviesListController@show') -> name ('movies-list');
 
-    return view ('moviesList', [
-        'movies' => $userMovies,
-        'userId' => $userId
-    ]);
-    }
-});
+//Search Routes
+
+Route::get('Action', 'SearchController@showAction') -> name('action');
+
+Route::get('Aventure', 'SearchController@showAventure') -> name('aventure');
+
+Route::get('Comedie', 'SearchController@showComedie') -> name('comedie');
+
+Route::get('Drame', 'SearchController@showDrame') -> name('drame');
+
+Route::get('Fantastique', 'SearchController@showFantastique') -> name('fantastique');
+
+Route::get('Horreur', 'SearchController@showHorreur') -> name('horreur');
+
+Route::get('Policier', 'SearchController@showPolicier') -> name('policier');
+
+Route::get('ScienceF', 'SearchController@showScienceF') -> name('scienceF');
+
+Route::get('Thriller', 'SearchController@showThriller') -> name('thriller');

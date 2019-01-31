@@ -8,6 +8,7 @@
         <div class="card-body">
             <h5 class="card-title">{{$movie->title}}</h5>
             <p class="card-text">Resumé : {{$movie->synopsis}}</p>
+            <p class="card-text">Catégorie : {{$movie->category}}</p>
             <p class="card-text">Date de sortie : {{$movie->release_date}}</p>
            
         </div>

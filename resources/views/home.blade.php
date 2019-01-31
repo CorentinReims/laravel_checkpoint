@@ -14,9 +14,12 @@
                         </div>
                     @endif
 
-                    Bienvenue<br />
-                    Vous êtes connecté
-                    <a href="{{ url('/add-movies') }}">Ajoute un film !</a>
+                    <p>
+                        Bienvenue<br />
+                        Vous êtes connecté en tant que {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <br />
+                        <a href="{{ url('/add-movies') }}">Ajoute un film !</a><br />
+                        <a href="{{ url('/movies-list') }}">Ma liste de films</a>
+                    </p>
                 </div>
             </div>
         </div>

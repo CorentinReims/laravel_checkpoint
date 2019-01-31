@@ -14,11 +14,12 @@ class CreateMoviesTable extends Migration
     public function up()
     {
         Schema::create('movies', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
             $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('poster');
+            $table->string('category');
             $table->string('synopsis');
             $table->date('release_date');
             $table->timestamps();
@@ -32,6 +33,6 @@ class CreateMoviesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movies');
+        Schema::drop('movies');
     }
 }

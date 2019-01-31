@@ -47,6 +47,31 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Catégorie') }}</label>
+
+                            <div class="col-md-6">
+                                <!-- <input type="text" name="category" value="{{ old('category') }}"> -->
+                                <select id="category" type="text" class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" name="category" value="{{ old('category') }}" required autofocus>
+                                    <option >Choisissez une catégorie</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Aventure">Aventure</option>
+                                    <option value="Comédie">Comédie</option>
+                                    <option value="Drame">Drame</option>
+                                    <option value="Fantastique">Fantastique</option>
+                                    <option value="Horreur">Horreur</option>
+                                    <option value="Policier">Policier</option>
+                                    <option value="Science-fiction">Science-fiction</option>
+                                    <option value="Thriller">Thriller</option>
+                                </select>
+                                @if ($errors->has('category'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('category') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="synopsis" class="col-md-4 col-form-label text-md-right">{{ __('Resumé') }}</label>
 
                             <div class="col-md-6">
